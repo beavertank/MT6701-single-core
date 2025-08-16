@@ -38,7 +38,7 @@ void MT6701::begin()
     xSemaphoreTake(rpmFilterMutex, portMAX_DELAY);
     rpmFilter.resize(rpmFilterSize);
     xSemaphoreGive(rpmFilterMutex);
-    xTaskCreatePinnedToCore(updateTask, "MT6701 update task", 2048, this, 2, NULL, 1);
+    xTaskCreatePinnedToCore(updateTask, "MT6701 update task", 2048, this, 2, NULL, 0);
 }
 
 /**
