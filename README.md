@@ -1,4 +1,6 @@
-# MT6701 Magnetic Rotary Encoder Library for ESP32
+# MT6701 Magnetic Rotary Encoder Library for ESP32 - single core update
+
+Branched from the original MT6710 library to make a change to the way the library handles core affinity. It now defaults to the first core, Core 0, rather than the previous chosen Core 1. This allows the library to work on any ESP32 regardless of the number of cores it has.
 
 The MT6701 library provides a simple and effective way to interface with the MT6701 magnetic rotary encoder using ESP32. It supports reading angular positions in radians and degrees, calculating rotational velocity in RPM, and smoothing RPM values with a moving average filter. The sensor uses I2C.
 
